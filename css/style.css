@@ -1,0 +1,9 @@
+.icon {
+  transition: ease .3s;
+  margin: 5px;
+  display: inline-block;
+}
+.icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(2px 2px 2px black);
+}
