@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- animate css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   
   <!-- bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   
-  <title>Gestão de Estoque - Chaves</title>
+  <title>Gestão de Estoque</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to bottom, #4e54c8, #8f94fb)">
+    <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to top, #00c6fb 0%, #005bea 100%);">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src="./img/logo1.png" alt="" width="180px" class="animate__animated animate__fadeInRightBig">
@@ -27,10 +29,10 @@
               <a class="nav-link active icon" href="#"   data-bs-toggle="modal" data-bs-target="#janelaModal" style="color: white;">Cadastrar <img src="./imgs/cadastro-nav.png" width="28px" class="icon"></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#acessar" style="color: white;">Entradas </a>
+              <a class="nav-link active icon" href="#acessar" style="color: white;">Entradas <img src="./imgs/adicionar-nav.png" width="28px" class="icon"></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./html/buscaData.html" style="text-decoration: none; color: white">Saidas </a>
+              <a class="nav-link icon" href="./html/buscaData.html" style="text-decoration: none; color: white">Saidas <img src="./imgs/remover-nav.png" width="28px" class="icon"></a>
             </li>
           </ul>
           <form class="d-flex" role="search">
@@ -43,8 +45,8 @@
   </header>
   
 <main class="container mt-4 d-flex align-items-center justify-content-center" >
-    <div class="row container d-flex align-items-center justify-content-center" style="border-radius: 4px; background-color: #adadad;">
-      <h1 style="margin-left: 2rem;"><strong>Estoque</strong> <img src="./imgs/estoque-pronto.png" width="48px"></h1>
+    <div class="row container d-flex align-items-center justify-content-center" style="border-radius: 16px; background: linear-gradient(to top, #005bea 0%, #00c6fb) 100%;">
+      <h1 style="margin-left: 2rem; color: white;"><strong>Estoque</strong> <img src="./imgs/estoque-pronto.png" width="48px" class="animacao"></h1>
       <div class="col-12">
         <div class="conteudo">
           <table class="table">
@@ -62,7 +64,6 @@
         </div>
       </div>
     </div>
-
 
 
 </main>

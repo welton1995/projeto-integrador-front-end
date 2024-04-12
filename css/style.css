@@ -2,8 +2,32 @@
   transition: ease .3s;
   margin: 5px;
   display: inline-block;
+  cursor: pointer;
 }
 .icon:hover {
   transform: scale(1.2);
   filter: drop-shadow(2px 2px 2px black);
 }
+
+.animacao {
+  display: inline-block;
+  margin: 0 0.5rem;
+  animation: heartBeat infinite ease-in-out; 
+  animation-duration: 10s;
+  filter: drop-shadow(2px 2px 2px black);
+}
+
+.botaoMenosMais {
+  width: 4rem;
+  height: 3rem;
+}
+
+.visor {
+  width: 5rem;
+  height: 3rem;
+  margin: 0 .5rem
+}
+
+
+
+
