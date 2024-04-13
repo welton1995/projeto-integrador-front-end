@@ -1,4 +1,4 @@
-const apiURL = 'https://odd-fawn-bathing-suit.cyclic.app';
+const apiURL = 'https://important-cyan-dress.cyclic.app';
 
 const modeloCadastrar = document.querySelector('#inputModeloCadastrar');
 const codigoCadastrar = document.querySelector('#inputCodigoCadastrar');
@@ -39,7 +39,7 @@ const buscaRegistros = async () => {
       <td class="text-center align-middle">${chave.quantidade}</a></td>
       <td class="text-center align-middle">${dataCorreta}</a></td>
       <td class="text-center align-middle">
-        <a href="html/info.html?id=${chave._id}&nome=${chave.chaves.nome}&codigo=${chave.chaves.codigo}&quantidade=${chave.chaves.quantidade}&data=${chave.data}"><img src="../imgs/lixeira.png" width="24px" title="Remover produto" class='icon'></a>
+        <a href="./excluirSaida.html?id=${chave._id}&nome=${chave.chaves.nome}&codigo=${chave.chaves.codigo}&quantidade=${chave.chaves.quantidade}&data=${chave.data}"><img src="../imgs/lixeira.png" width="24px" title="Remover produto" class='icon'></a>
       </td>
       `
       tabela.appendChild(tr); 

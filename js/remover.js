@@ -1,5 +1,5 @@
 // URL da API
-const apiURL = 'https://odd-fawn-bathing-suit.cyclic.app';
+const apiURL = 'https://important-cyan-dress.cyclic.app';
 
 // input e buttons - adiciona e remove
 const inputNumero = document.querySelector('#numero');

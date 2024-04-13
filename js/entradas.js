@@ -1,4 +1,4 @@
-const apiURL = 'https://odd-fawn-bathing-suit.cyclic.app';
+const apiURL = 'https://important-cyan-dress.cyclic.app';
 
 const modeloCadastrar = document.querySelector('#inputModeloCadastrar');
 const codigoCadastrar = document.querySelector('#inputCodigoCadastrar');

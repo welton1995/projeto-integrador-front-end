@@ -19,8 +19,9 @@ a {
 }
 
 .link {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 1rem;
+  color: white;
   text-transform: uppercase;
   text-shadow: 2px 2px 2px black;
 }
