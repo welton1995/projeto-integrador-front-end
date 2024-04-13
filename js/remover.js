@@ -54,17 +54,29 @@ confirmaSaida.addEventListener('click', async(event) => {
     const resposta = await fetch(`${apiURL}/saidas/${id}`, requestOptions);
     const conteudo = await resposta.json();
 
+    if(conteudo == 'Saldo insuficiente!'){
+      Swal.fire({
+        title: "Quantidade em estoque insuficiente!",
+        icon: "warning",
+        confirmButtonColor: "#0275d8",
+      });
+      return;
+    }
+
     if(conteudo == 'Saída realizada com sucesso!'){
       Swal.fire({
         title: "Saída realizada com sucesso!",
         icon: "success",
         confirmButtonColor: "#5cb85c",
       });
+
+      setTimeout(()=> {
+        window.location.href = '../index.html';
+      }, 1500);
+
+      return;
     }
 
-    setTimeout(()=> {
-      window.location.href = '../index.html';
-    }, 1500)    
   } catch (error) {
     return console.log(error);
   }

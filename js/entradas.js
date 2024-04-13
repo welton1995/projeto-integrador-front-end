@@ -16,6 +16,16 @@ const buscaRegistros = async () => {
     const conteudo = await resposta.json();
     console.log(conteudo)
 
+    // Se não possuir entradas
+    if(conteudo.length == 0){
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td colspan="5" class="text-center">Nenhuma entrada realizada.</td>
+      `
+      tabela.appendChild(tr);
+      return;
+    }
+
     conteudo.reverse().forEach((chave)=>{
       const dataFormatada = new Date(chave.data);
       const dataCorreta = dataFormatada.toLocaleDateString('pt-BR', {timeZone: 'UTC', year: '2-digit', month:'numeric', day: 'numeric'});
