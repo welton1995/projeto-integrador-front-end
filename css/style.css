@@ -51,6 +51,17 @@ a {
   margin: .55rem;
 }
 
+.botao {
+  background-color: #00c6fb;
+  font-weight: 700;
+  color: white;
+}
+.botao:hover {
+  background-color: #00c5fbc2;
+  font-weight: 700;
+  color: white;
+}
+
 .tamanhoInput {
   width: 75%;
   margin: .25rem;
