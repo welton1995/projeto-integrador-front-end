@@ -1,5 +1,5 @@
 // URL da API
-const apiURL = 'http://localhost:3333';
+const apiURL = 'https://odd-fawn-bathing-suit.cyclic.app';
 
 const modeloCadastrar = document.querySelector('#inputModeloCadastrar');
 const codigoCadastrar = document.querySelector('#inputCodigoCadastrar');
