@@ -30,13 +30,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active icon" href="#"   data-bs-toggle="modal" data-bs-target="#janelaModal" style="color: white;">Cadastrar <img src="../imgs/cadastro-nav.png" width="28px" class="icon"></a>
+              <a class="nav-link active icon" href="#"   data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: white;">Cadastrar <img src="../imgs/cadastro-nav.png" width="28px" class="icon"></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active icon" href="#acessar" style="color: white;">Entradas <img src="../imgs/adicionar-nav.png" width="28px" class="icon"></a>
+              <a class="nav-link active icon" href="./entradas.html" style="color: white;">Entradas <img src="../imgs/adicionar-nav.png" width="28px" class="icon"></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link icon" href="./html/buscaData.html" style="text-decoration: none; color: white">Saidas <img src="../imgs/remover-nav.png" width="28px" class="icon"></a>
+              <a class="nav-link icon" href="./saidas.html" style="text-decoration: none; color: white">Saidas <img src="../imgs/remover-nav.png" width="28px" class="icon"></a>
             </li>
           </ul>
           <form class="d-flex" role="search">
@@ -53,15 +53,29 @@
       <h1 style="margin-left: 2rem; color: white;"><strong>Registrar Saida</strong> <img src="../imgs/remover-produto.png" width="48px" class="animacao"></h1>
       <div class="col-12">
         <form class="justify-content-center justify-content-center">
-          <div class=" d-flex align-items-center justify-content-center">
+          <!-- Modelo -->
+          <div class="d-flex flex-column align-items-center justify-content-center">
+           <div style="width: 100%;" class="d-flex align-items-center">
+            <p class="nomesFormulario">Modelo: </p>
             <input type="text" class="form-control inputsRegistrarSaida" id="inputModeloSaida" disabled>
+           </div>
           </div>
+          <!-- Código -->
           <div class=" d-flex align-items-center justify-content-center">
-            <input type="text" class="form-control inputsRegistrarSaida" id="inputCodigoSaida" disabled>
+           <div style="width: 100%;" class="d-flex align-items-center">
+              <p class="nomesFormulario">Código: </p>
+              <input type="text" class="form-control inputsRegistrarSaida" id="inputCodigoSaida" disabled>
+            </div>
           </div>
+          <!-- Quantidade -->
           <div class=" d-flex align-items-center justify-content-center">
-            <input type="text" class="form-control inputsRegistrarSaida" id="inputQuantidadeSaida" disabled>
-          </div>
+            <div style="width: 100%;" class="d-flex align-items-center">
+               <p class="nomesFormulario">Estoque: </p>
+               <input type="text" class="form-control inputsRegistrarSaida" id="inputQuantidadeSaida" disabled>
+             </div>
+           </div>
+
+          <!-- Botoes -->
           <div class="d-flex justify-content-center">
             <!-- Botão de menos -->
             <button id="botaoMenos" class="btn btn-danger botaoMenosMais">-</button>
@@ -80,6 +94,34 @@
       </div>
     </div>
 
+         <!-- Cadastrar modal -->
+         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><strong>Cadastrar</strong> <img src="../imgs/chave.png" width="32px"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+              </div>
+              <div class="modal-body">
+                <form class="justify-content-center justify-content-center">
+                  <div class="d-flex align-items-center justify-content-center">
+                    <input type="text" class="form-control inputsRegistrarSaida" id="inputModeloCadastrar" placeholder="Modelo">
+                  </div>
+                  <div class=" d-flex align-items-center justify-content-center">
+                    <input type="text" maxlength="5" class="form-control inputsRegistrarSaida" id="inputCodigoCadastrar" placeholder="Código">
+                  </div>
+                  <div class=" d-flex align-items-center justify-content-center">
+                    <input type="number" class="form-control inputsRegistrarSaida" id="inputQuantidadeCadastrar" placeholder="Quantidade">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer d-flex align-items-center justify-content-center">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" id="btnCadastrar">Cadastrar</button>
+              </div>
+            </div>
+          </div>
+          </div>
 
 
 

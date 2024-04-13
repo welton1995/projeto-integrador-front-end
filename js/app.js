@@ -1,6 +1,7 @@
 // URL da API
 const apiURL = 'https://odd-fawn-bathing-suit.cyclic.app';
 
+// inputs para cadastrar chave
 const modeloCadastrar = document.querySelector('#inputModeloCadastrar');
 const codigoCadastrar = document.querySelector('#inputCodigoCadastrar');
 const quantidadeCadastrar = document.querySelector('#inputQuantidadeCadastrar');
@@ -16,6 +17,15 @@ const buscaRegistros = async () => {
     };
     const resposta = await fetch(apiURL, requestOptions);
     const conteudo = await resposta.json();
+
+    if(conteudo.length == 0){
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td colspan="5" class="text-center">Nenhuma entrada realizada.</td>
+      `
+      tabela.appendChild(tr);
+      return;
+    }
  
     conteudo.chaves.reverse().forEach((chave)=>{
       const tabela = document.querySelector('#tabela');

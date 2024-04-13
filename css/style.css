@@ -43,6 +43,13 @@ a {
   margin: .5rem;
 }
 
+.nomesFormulario {
+  font-weight: bold;
+  color: aliceblue;
+  margin-right: .5rem;
+}
+
+
 tr:hover td {
   background-color: #92ddf1;
 }
