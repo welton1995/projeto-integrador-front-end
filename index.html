@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Gerador de PDF html2pdf -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
   <!-- animate css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   
@@ -69,7 +68,7 @@
       </div>
 
       <div class="col-12">
-        <div class="conteudo">
+        <div id="conteudo">
           <table class="table">
             <thead>
                 <tr>
@@ -125,31 +124,22 @@
 <script defer>
   const btnGenerate = document.querySelector('#generate-pdf');
   const conteudo = document.querySelector('#conteudo');
+  const data = new Date();
+  const nomeRelatório = data.toLocaleDateString("pt-BR", { year:'numeric', month: 'numeric', day: 'numeric' })
 
-  btnGenerate.addEventListener('click', (e)=> {
-    e.preventDefault();
-// Conteúdo HTML que você deseja converter em PDF
-var htmlContent = conteudo;
+  btnGenerate.addEventListener('click', ()=> {
 
-// Opções de configuração para o pdf
-var options = {
-  margin: .25,
-  filename: 'relatorio.pdf', // Nome do arquivo de saída
+    const options = {
+    margin: [10, 10, 10, 10],
+    filename: `Relatório_Estoque_${nomeRelatório}.pdf`,
+    html2canvas: {scale: 2},
+    jsPDF: {unit: 'mm', format: 'a4', orientation: 'portrait'}
+  }
 
-  html2canvas: { scale: 2 }, // Configuração do html2canvas
-  jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' } // Configuração do jsPDF
-};
-
-// Use o html2pdf para converter o HTML em PDF e baixar o PDF
-html2pdf().from(htmlContent).set(options).save();
-
-Swal.fire({
-    title: "PDF gerado com sucesso",
-    icon: "success",
-    confirmButtonColor: "#0275d8",
+  // Gerar pdf
+  html2pdf().set(options).from(conteudo).save();
   });
 
-});
 </script>
 
 <script src="./js/app.js" defer></script>
