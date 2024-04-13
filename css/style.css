@@ -17,6 +17,7 @@
   filter: drop-shadow(2px 2px 2px black);
 }
 
+/* Registra Saída */
 .botaoMenosMais {
   width: 4rem;
   height: 3rem;
@@ -26,6 +27,16 @@
   width: 5rem;
   height: 3rem;
   margin: 0 .5rem
+}
+
+.inputsRegistrarSaida {
+  width: 80%;
+  margin-bottom: 1rem;
+}
+
+.inputConfirmaSaida, .inputConfirmaEntrada {
+  width: 105px;
+  margin: .5rem;
 }
 
 

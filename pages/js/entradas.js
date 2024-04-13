@@ -1,11 +1,9 @@
-// URL da API
 const apiURL = 'http://localhost:3333';
 
 const modeloCadastrar = document.querySelector('#inputModeloCadastrar');
 const codigoCadastrar = document.querySelector('#inputCodigoCadastrar');
 const quantidadeCadastrar = document.querySelector('#inputQuantidadeCadastrar');
 const btnCadastrar = document.querySelector('#btnCadastrar');
-
 
 // Lista todas chaves cadastradas
 const buscaRegistros = async () => {
@@ -14,21 +12,24 @@ const buscaRegistros = async () => {
         method: 'GET',
         redirect: 'follow'
     };
-    const resposta = await fetch(apiURL, requestOptions);
+    const resposta = await fetch(`${apiURL}/entradas`, requestOptions);
     const conteudo = await resposta.json();
- 
-    conteudo.chaves.reverse().forEach((chave)=>{
+    console.log(conteudo)
+
+    conteudo.reverse().forEach((chave)=>{
+      const dataFormatada = new Date(chave.data);
+      const dataCorreta = dataFormatada.toLocaleDateString('pt-BR', {timeZone: 'UTC', year: '2-digit', month:'numeric', day: 'numeric'});
+
       const tabela = document.querySelector('#tabela');
       const tr = document.createElement('tr');
       tr.innerHTML = `
 
-      <td class="text-center align-middle">${chave.nome}</a></td>
-      <td class="text-center align-middle">${chave.codigo}</a></td>
+      <td class="text-center align-middle">${chave.chaves.nome}</a></td>
+      <td class="text-center align-middle">${chave.chaves.codigo}</a></td>
       <td class="text-center align-middle">${chave.quantidade}</a></td>
+      <td class="text-center align-middle">${dataCorreta}</a></td>
       <td class="text-center align-middle">
-        <a href="pages/remover.html?id=${chave._id}&nome=${chave.nome}&codigo=${chave.codigo}&quantidade=${chave.quantidade}"><img src="./imgs/remover.png" width="24px" title="Remover quantidade" class='icon'  data-bs-toggle="modal" data-bs-target="#exampleModal"></a>
-        <a href="pages/adicionar.html?id=${chave._id}&nome=${chave.nome}&codigo=${chave.codigo}&quantidade=${chave.quantidade}"><img src="./imgs/adicionar.png" width="24px" title="Adicionar quantidade" class='icon'></a>
-        <a href="html/info.html?id=${chave._id}&nome=${chave.nome}&codigo=${chave.codigo}&quantidade=${chave.quantidade}"><img src="./imgs/lixeira.png" width="24px" title="Remover produto" class='icon'></a>
+        <a href="html/info.html?id=${chave._id}&nome=${chave.nome}&codigo=${chave.codigo}&quantidade=${chave.quantidade}"><img src="../imgs/lixeira.png" width="24px" title="Remover produto" class='icon'></a>
       </td>
       `
       tabela.appendChild(tr); 
@@ -38,7 +39,6 @@ const buscaRegistros = async () => {
     return console.log(error);
   }
 }
-
 buscaRegistros();
 
 
@@ -97,6 +97,3 @@ btnCadastrar.addEventListener('click', async(event)=> {
     return console.log(error);
   }
 });
-
-
-

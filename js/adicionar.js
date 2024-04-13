@@ -5,12 +5,12 @@ const apiURL = 'http://localhost:3333';
 const inputNumero = document.querySelector('#numero');
 const botaoMais = document.querySelector('#botaoMais');
 const botaoMenos = document.querySelector('#botaoMenos');
-const confirmaSaida = document.querySelector('#inputConfirmaSaida');
+const confirmaSaida = document.querySelector('#inputConfirmaEntrada');
 
 // inputs formulario registrar saida
-const modelo = document.querySelector('#inputModeloSaida');
-const codigo = document.querySelector('#inputCodigoSaida');
-const quantidade = document.querySelector('#inputQuantidadeSaida');
+const modelo = document.querySelector('#inputModeloEntrada');
+const codigo = document.querySelector('#inputCodigoEntrada');
+const quantidade = document.querySelector('#inputQuantidadeEntrada');
 const quantidadeSaida = document.querySelector('#numero');
 
 // informações captadas via parametros de URL
@@ -51,12 +51,12 @@ confirmaSaida.addEventListener('click', async(event) => {
       return;
     }
     
-    const resposta = await fetch(`${apiURL}/saidas/${id}`, requestOptions);
+    const resposta = await fetch(`${apiURL}/entradas/${id}`, requestOptions);
     const conteudo = await resposta.json();
 
-    if(conteudo == 'Saída realizada com sucesso!'){
+    if(conteudo == 'Entrada realizada com sucesso!'){
       Swal.fire({
-        title: "Saída realizada com sucesso!",
+        title: "Entrada realizada com sucesso!",
         icon: "success",
         confirmButtonColor: "#5cb85c",
       });
@@ -64,7 +64,7 @@ confirmaSaida.addEventListener('click', async(event) => {
 
     setTimeout(()=> {
       window.location.href = '../index.html';
-    }, 1500)    
+    }, 1500);   
   } catch (error) {
     return console.log(error);
   }

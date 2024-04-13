@@ -14,7 +14,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.all.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.min.css" rel="stylesheet">
 
-  <title>Registrar Saida</title>
+  <title>Registrar Entrada</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -50,17 +50,18 @@
   
 <main class="container mt-4 d-flex align-items-center justify-content-center" >
     <div class="row container d-flex align-items-center justify-content-center" style="border-radius: 16px; background: linear-gradient(to top, #005bea 0%, #00c6fb) 100%;">
-      <h1 style="margin-left: 2rem; color: white;"><strong>Registrar Saida</strong> <img src="../imgs/remover-produto.png" width="48px" class="animacao"></h1>
+      <h1 style="margin-left: 2rem; color: white;"><strong>Registrar Entrada</strong> <img src="../imgs/adicionar-produto.png" width="48px" class="animacao"></h1>
       <div class="col-12">
+        <!-- formulario -->
         <form class="justify-content-center justify-content-center">
           <div class=" d-flex align-items-center justify-content-center">
-            <input type="text" class="form-control inputsRegistrarSaida" id="inputModeloSaida" disabled>
+            <input type="text" class="form-control inputsRegistrarSaida" id="inputModeloEntrada" disabled>
           </div>
           <div class=" d-flex align-items-center justify-content-center">
-            <input type="text" class="form-control inputsRegistrarSaida" id="inputCodigoSaida" disabled>
+            <input type="text" class="form-control inputsRegistrarSaida" id="inputCodigoEntrada" disabled>
           </div>
           <div class=" d-flex align-items-center justify-content-center">
-            <input type="text" class="form-control inputsRegistrarSaida" id="inputQuantidadeSaida" disabled>
+            <input type="text" class="form-control inputsRegistrarSaida" id="inputQuantidadeEntrada" disabled>
           </div>
           <div class="d-flex justify-content-center">
             <!-- Botão de menos -->
@@ -73,8 +74,8 @@
             <button id="botaoMais" class="btn btn-success botaoMenosMais">+</button>
             </div>
             <div class="d-flex justify-content-center">
-              <a href="../index.html" class="btn btn-secondary inputConfirmaSaida">Cancelar</a>
-              <button class="btn btn-success inputConfirmaSaida"  id="inputConfirmaSaida">Confimar</button>
+              <a href="../index.html" class="btn btn-secondary inputConfirmaEntrada">Cancelar</a>
+              <button class="btn btn-success inputConfirmaEntrada"  id="inputConfirmaEntrada">Confimar</button>
             </div>
         </form>
       </div>
@@ -85,6 +86,6 @@
 
 </main>
 
-<script src="../js/remover.js"></script>
+<script src="../js/adicionar.js"></script>
 </body>
 </html>
