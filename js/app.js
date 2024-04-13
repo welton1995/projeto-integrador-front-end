@@ -26,9 +26,9 @@ const buscaRegistros = async () => {
       <td class="text-center align-middle">${chave.codigo}</a></td>
       <td class="text-center align-middle">${chave.quantidade}</a></td>
       <td class="text-center align-middle">
-        <a href="pages/remover.html?id=${chave._id}&nome=${chave.nome}&codigo=${chave.codigo}&quantidade=${chave.quantidade}"><img src="./imgs/remover.png" width="24px" title="Remover quantidade" class='icon'  data-bs-toggle="modal" data-bs-target="#exampleModal"></a>
-        <a href="pages/adicionar.html?id=${chave._id}&nome=${chave.nome}&codigo=${chave.codigo}&quantidade=${chave.quantidade}"><img src="./imgs/adicionar.png" width="24px" title="Adicionar quantidade" class='icon'></a>
-        <a href="html/info.html?id=${chave._id}&nome=${chave.nome}&codigo=${chave.codigo}&quantidade=${chave.quantidade}"><img src="./imgs/lixeira.png" width="24px" title="Remover produto" class='icon'></a>
+        <a href="pages/remover.html?id=${chave._id}&nome=${chave.nome}&codigo=${chave.codigo}&quantidade=${chave.quantidade}"><img src="./imgs/remover.png" width="24px" title="Saída de Estoque" class='icon'  data-bs-toggle="modal" data-bs-target="#exampleModal"></a>
+        <a href="pages/adicionar.html?id=${chave._id}&nome=${chave.nome}&codigo=${chave.codigo}&quantidade=${chave.quantidade}"><img src="./imgs/adicionar.png" width="24px" title="Entrada de Estoque" class='icon'></a>
+        <a href="pages/excluirChave.html?id=${chave._id}&nome=${chave.nome}&codigo=${chave.codigo}&quantidade=${chave.quantidade}"><img src="./imgs/lixeira.png" width="24px" title="Remover Chave" class='icon'></a>
       </td>
       `
       tabela.appendChild(tr); 
@@ -76,7 +76,7 @@ btnCadastrar.addEventListener('click', async(event)=> {
     if(conteudo == 'Código de chave já cadastrado!'){
       Swal.fire({
         title: "Código de chave já cadastrado!",
-        icon: "info",
+        icon: "warning",
         confirmButtonColor: "#5bc0de",
       });
       return;
