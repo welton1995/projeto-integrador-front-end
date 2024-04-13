@@ -51,6 +51,11 @@ a {
   margin: .55rem;
 }
 
+.tamanhoInput {
+  width: 75%;
+  margin: .25rem;
+}
+
 /* Registra Saída */
 .botaoMenosMais {
   width: 4rem;
