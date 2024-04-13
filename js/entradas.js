@@ -40,7 +40,7 @@ const buscaRegistros = async () => {
       <td class="text-center align-middle">${chave.quantidade}</a></td>
       <td class="text-center align-middle">${dataCorreta}</a></td>
       <td class="text-center align-middle">
-        <a href="html/info.html?id=${chave._id}&nome=${chave.nome}&codigo=${chave.codigo}&quantidade=${chave.quantidade}"><img src="../imgs/lixeira.png" width="24px" title="Remover produto" class='icon'></a>
+        <a href="./excluirEntrada.html?id=${chave._id}&nome=${chave.chaves.nome}&codigo=${chave.chaves.codigo}&quantidade=${chave.chaves.quantidade}&=${chave.data}"><img src="../imgs/lixeira.png" width="24px" title="Remover produto" class='icon'></a>
       </td>
       `
       tabela.appendChild(tr); 
