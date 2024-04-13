@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Gerador de PDF html2pdf -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
   <!-- animate css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   
@@ -22,7 +26,7 @@
     <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to top, #00c6fb 0%, #005bea 100%);">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="./imgs/logoBranco.png" alt="" width="60px" class="animate__animated animate__fadeInRightBig">
+          <img src="./imgs/logoBranco.png" title="Chaveiro BS" width="60px" class="animate__animated animate__fadeInRightBig logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -30,18 +34,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active icon" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: white;">Cadastrar <img src="./imgs/cadastro-nav.png" width="28px" class="icon"></a>
+              <a class="nav-link active icon link" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: white;">Cadastrar <img src="./imgs/cadastro-nav.png" width="28px" class="icon"></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active icon" href="./pages/entradas.html" style="color: white;">Entradas <img src="./imgs/adicionar-nav.png" width="28px" class="icon"></a>
+              <a class="nav-link active icon link" href="./pages/entradas.html" style="color: white;">Entradas <img src="./imgs/adicionar-nav.png" width="28px" class="icon"></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link icon" href="./html/buscaData.html" style="text-decoration: none; color: white">Saidas <img src="./imgs/remover-nav.png" width="28px" class="icon"></a>
+              <a class="nav-link icon link" href="./pages/saidas.html" style="text-decoration: none; color: white">Saídas <img src="./imgs/remover-nav.png" width="28px" class="icon"></a>
             </li>
           </ul>
           <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" id="inputBuscarCpf" placeholder="Pesquisar codigo" aria-label="Search">
-            <button class="btn btn-primary" type="submit" id="btnBuscarCpf">Pesquisar</button>
+            <input class="form-control me-2" type="search" id="buscaCodigo" maxlength="5" placeholder="Pesquisar código" aria-label="Search">
+            <button class="btn btn-primary" type="submit" id="btnBuscaCodigo">Pesquisar</button>
           </form>
         </div>
       </div>
@@ -49,8 +53,21 @@
   </header>
   
 <main class="container mt-4 d-flex align-items-center justify-content-center" >
-    <div class="row container d-flex align-items-center justify-content-center" style="border-radius: 16px; background: linear-gradient(to top, #005bea 0%, #00c6fb) 100%;">
-      <h1 style="margin-left: 2rem; color: white;"><strong>Estoque</strong> <img src="./imgs/estoque-pronto.png" width="48px" class="animacao"></h1>
+    <div class="row container d-flex align-items-start justify-content-between" style="border-radius: 16px; background: linear-gradient(to top, #005bea 0%, #00c6fb) 100%;">
+      
+      <div class="pagina">
+        <div class="align-items-start">
+          <h1 style="margin-left: 2rem; color: white;"><strong>Estoque</strong>
+            <img src="./imgs/estoque-pronto.png" width="48px" class="animacao">
+          </h1>
+        </div>
+        <div class="align-items-end">
+          <h1>
+            <img src="./imgs/pdf.png" width="48px" id="generate-pdf" class="icon">
+          </h1>
+        </div>
+      </div>
+
       <div class="col-12">
         <div class="conteudo">
           <table class="table">
@@ -102,6 +119,39 @@
 </main>
 
 
-<script src="./js/app.js"></script>
+
+
+<!-- Gerador de PDF -->
+<script defer>
+  const btnGenerate = document.querySelector('#generate-pdf');
+  const conteudo = document.querySelector('#conteudo');
+
+  btnGenerate.addEventListener('click', (e)=> {
+    e.preventDefault();
+// Conteúdo HTML que você deseja converter em PDF
+var htmlContent = conteudo;
+
+// Opções de configuração para o pdf
+var options = {
+  margin: .25,
+  filename: 'relatorio.pdf', // Nome do arquivo de saída
+
+  html2canvas: { scale: 2 }, // Configuração do html2canvas
+  jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' } // Configuração do jsPDF
+};
+
+// Use o html2pdf para converter o HTML em PDF e baixar o PDF
+html2pdf().from(htmlContent).set(options).save();
+
+Swal.fire({
+    title: "PDF gerado com sucesso",
+    icon: "success",
+    confirmButtonColor: "#0275d8",
+  });
+
+});
+</script>
+
+<script src="./js/app.js" defer></script>
 </body>
 </html>

@@ -4,7 +4,6 @@ const modeloCadastrar = document.querySelector('#inputModeloCadastrar');
 const codigoCadastrar = document.querySelector('#inputCodigoCadastrar');
 const quantidadeCadastrar = document.querySelector('#inputQuantidadeCadastrar');
 const btnCadastrar = document.querySelector('#btnCadastrar');
-const tabela = document.querySelector('#tabela');
 
 // Lista todas chaves cadastradas
 const buscaRegistros = async () => {
@@ -13,7 +12,7 @@ const buscaRegistros = async () => {
         method: 'GET',
         redirect: 'follow'
     };
-    const resposta = await fetch(`${apiURL}/entradas`, requestOptions);
+    const resposta = await fetch(`${apiURL}/saidas`, requestOptions);
     const conteudo = await resposta.json();
     console.log(conteudo)
 
@@ -21,17 +20,17 @@ const buscaRegistros = async () => {
     if(conteudo.length == 0){
       const tr = document.createElement('tr');
       tr.innerHTML = `
-        <td colspan="5" class="text-center">Nenhuma entrada realizada.</td>
+        <td colspan="5" class="text-center">Nenhuma saída realizada.</td>
       `
       tabela.appendChild(tr);
       return;
     }
 
     conteudo.reverse().forEach((chave)=>{
-
       const dataFormatada = new Date(chave.data);
       const dataCorreta = dataFormatada.toLocaleDateString('pt-BR', {timeZone: 'UTC', year: '2-digit', month:'numeric', day: 'numeric'});
 
+      const tabela = document.querySelector('#tabela');
       const tr = document.createElement('tr');
       tr.innerHTML = `
 

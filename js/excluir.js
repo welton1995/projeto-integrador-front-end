@@ -83,7 +83,7 @@ btnCadastrar.addEventListener('click', async(event)=> {
 });
 
 
-// Exlui chave do estoque
+// Exclui chave do estoque
 confirmaSaida.addEventListener('click', async(event)=> {
   try {
     event.preventDefault();
@@ -118,7 +118,7 @@ confirmaSaida.addEventListener('click', async(event)=> {
 
     if(conteudo == 'Chave excluida com sucesso!'){
       Swal.fire({
-        title: "Chave excluida com sucesso!",
+        title: "Chave excluída com sucesso!",
         icon: "success",
         confirmButtonColor: "#0275d8",
       });

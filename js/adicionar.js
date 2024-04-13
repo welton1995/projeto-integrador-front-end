@@ -120,7 +120,7 @@ confirmaEntrada.addEventListener('click', async(event) => {
 
     if(conteudo == 'Entrada realizada com sucesso!'){
       Swal.fire({
-        title: "Entrada realizada com sucesso!",
+        title: `${quantidadeSaida.value} unidades adicionadas ao estoque!`,
         icon: "success",
         confirmButtonColor: "#5cb85c",
       });

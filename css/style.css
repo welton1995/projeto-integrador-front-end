@@ -2,11 +2,35 @@ a {
   margin: .25rem
 }
 
+.pagina {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.5rem;
+}
+
+.logo {
+  filter: drop-shadow(4px 4px 2px black);
+}
+
+.logo:hover {
+  animation: rubberBand ease-in-out; 
+  animation-duration: 1s;
+}
+
+.link {
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 2px black;
+}
+
 .icon {
   transition: ease .3s;
   margin: 5px;
   display: inline-block;
   cursor: pointer;
+
 }
 .icon:hover {
   transform: scale(1.2);
