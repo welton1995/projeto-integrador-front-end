@@ -46,7 +46,7 @@ a {
 }
 
 .sombra {
-  filter: drop-shadow(4px 4px 2px black);
+  filter: drop-shadow(4px 4px 1px black);
   color: white;
   margin: .55rem;
 }
