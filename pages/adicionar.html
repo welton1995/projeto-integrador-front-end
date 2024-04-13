@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./imgs/logoBranco.png" type="image/png">
+
   <!-- animate css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   
@@ -40,8 +42,8 @@
             </li>
           </ul>
           <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" id="inputBuscarCpf" placeholder="Pesquisar codigo" aria-label="Search">
-            <button class="btn btn-primary" type="submit" id="btnBuscarCpf">Pesquisar</button>
+            <input class="form-control me-2" type="search" id="buscaCodigo" placeholder="Pesquisar codigo" aria-label="Search">
+            <button class="btn btn-primary" type="submit" id="btnBuscaCodigo">Pesquisar</button>
           </form>
         </div>
       </div>
@@ -50,7 +52,7 @@
   
 <main class="container mt-4 d-flex align-items-center justify-content-center" >
     <div class="row container d-flex align-items-center justify-content-center" style="border-radius: 16px; background: linear-gradient(to top, #005bea 0%, #00c6fb) 100%;">
-      <h1 style="margin-left: 2rem; color: white;"><strong>Registrar Entrada</strong> <img src="../imgs/adicionar-produto.png" width="48px" class="animacao"></h1>
+      <h1 class="sombra"><strong>Registrar Entrada</strong> <img src="../imgs/adicionar-produto.png" width="48px"></h1>
       <div class="col-12">
         <!-- formulario -->
         <form class="justify-content-center justify-content-center">
@@ -128,6 +130,7 @@
 
 </main>
 
-<script src="../js/adicionar.js"></script>
+<script src="../js/pesquisarCodigo.js" defer></script>
+<script src="../js/adicionar.js" defer></script>
 </body>
 </html>

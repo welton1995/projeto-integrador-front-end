@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./imgs/logoBranco.png" type="image/png">
+
+  <!-- html2pdf -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   <!-- animate css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   
@@ -40,8 +45,8 @@
             </li>
           </ul>
           <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" id="inputBuscarCpf" placeholder="Pesquisar codigo" aria-label="Search">
-            <button class="btn btn-primary" type="submit" id="btnBuscarCpf">Pesquisar</button>
+            <input class="form-control me-2" type="search" id="buscaCodigo" placeholder="Pesquisar codigo" aria-label="Search">
+            <button class="btn btn-primary" type="submit" id="btnBuscaCodigo">Pesquisar</button>
           </form>
         </div>
       </div>
@@ -49,10 +54,24 @@
   </header>
   
 <main class="container mt-4 d-flex align-items-center justify-content-center" >
-    <div class="row container d-flex align-items-center justify-content-center" style="border-radius: 16px; background: linear-gradient(to top, #005bea 0%, #00c6fb) 100%;">
-      <h1 style="margin-left: 2rem; color: white;"><strong>Entradas</strong> <img src="../imgs/adicionar-produto.png" width="48px" class="animacao"></h1>
+    
+  <div class="row container d-flex align-items-center justify-content-center" style="border-radius: 16px; background: linear-gradient(to top, #005bea 0%, #00c6fb) 100%;">
+      <div class="pagina">
+        <div class="align-items-start">
+          <h1 class="sombra"><strong>Entradas</strong>
+            <img src="../imgs/adicionar-produto.png" width="48px" class="animacao">
+          </h1>
+        </div>
+        <div class="align-items-end">
+          <h1>
+            <img src="../imgs/pdf.png" width="48px" id="generate-pdf" class="icon sombra">
+          </h1>
+        </div>
+      </div>      
+      
+      
       <div class="col-12">
-        <div class="conteudo">
+        <div id="conteudo">
           <table class="table">
             <thead>
                 <tr>
@@ -74,9 +93,7 @@
       </div>
       </div>
       
-
-
-     <!-- Cadastrar modal -->
+    <!-- Cadastrar modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -108,7 +125,8 @@
 
 </main>
 
-
-<script src="../js/entradas.js"></script>
+<script src="../js/pesquisarCodigo.js" defer></script>
+<script src="../js/geradorPDF.js" defer></script>
+<script src="../js/entradas.js" defer></script>
 </body>
 </html>

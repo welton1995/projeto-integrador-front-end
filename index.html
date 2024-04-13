@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="icon" href="./imgs/logoBranco.png" type="image/png">
+  <!-- html2pdf -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   
   <!-- animate css -->
@@ -45,6 +46,7 @@
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" id="buscaCodigo" maxlength="5" placeholder="Pesquisar código" aria-label="Search">
             <button class="btn btn-primary" type="submit" id="btnBuscaCodigo">Pesquisar</button>
+      
           </form>
         </div>
       </div>
@@ -56,13 +58,13 @@
       
       <div class="pagina">
         <div class="align-items-start">
-          <h1 style="margin-left: 2rem; color: white;"><strong>Estoque</strong>
-            <img src="./imgs/estoque-pronto.png" width="48px" class="animacao">
+          <h1 class="sombra"><strong>Estoque</strong>
+            <img src="./imgs/estoque-pronto.png" width="48px" class="sombra">
           </h1>
         </div>
         <div class="align-items-end">
           <h1>
-            <img src="./imgs/pdf.png" width="48px" id="generate-pdf" class="icon">
+            <img src="./imgs/pdf.png" width="48px" id="generate-pdf" class="icon sombra">
           </h1>
         </div>
       </div>
@@ -117,31 +119,8 @@
 
 </main>
 
-
-
-
-<!-- Gerador de PDF -->
-<script defer>
-  const btnGenerate = document.querySelector('#generate-pdf');
-  const conteudo = document.querySelector('#conteudo');
-  const data = new Date();
-  const nomeRelatório = data.toLocaleDateString("pt-BR", { year:'numeric', month: 'numeric', day: 'numeric' })
-
-  btnGenerate.addEventListener('click', ()=> {
-
-    const options = {
-    margin: [10, 10, 10, 10],
-    filename: `Relatório_Estoque_${nomeRelatório}.pdf`,
-    html2canvas: {scale: 2},
-    jsPDF: {unit: 'mm', format: 'a4', orientation: 'portrait'}
-  }
-
-  // Gerar pdf
-  html2pdf().set(options).from(conteudo).save();
-  });
-
-</script>
-
+<script src="./js/pesquisarCodigo.js" defer></script>
+<script src="./js/geradorPDF.js" defer></script>
 <script src="./js/app.js" defer></script>
 </body>
 </html>

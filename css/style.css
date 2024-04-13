@@ -45,6 +45,12 @@ a {
   filter: drop-shadow(2px 2px 2px black);
 }
 
+.sombra {
+  filter: drop-shadow(4px 4px 2px black);
+  color: white;
+  margin: .55rem;
+}
+
 /* Registra Saída */
 .botaoMenosMais {
   width: 4rem;
