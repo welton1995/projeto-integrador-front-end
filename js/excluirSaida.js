@@ -69,5 +69,4 @@ confirmaSaida.addEventListener('click', async (event)=> {
   } catch (error) {
     return console.log(error);
   }
-
-})
+});
