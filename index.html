@@ -60,6 +60,7 @@
         <div class="align-items-start">
           <h1 class="sombra"><strong>Estoque</strong>
             <img src="./imgs/estoque-pronto.png" width="48px" class="sombra">
+            <img src="./imgs/Loading.gif" width="48px" id="loading">
           </h1>
         </div>
         <div class="align-items-end">
@@ -92,7 +93,9 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"><strong>Cadastrar</strong> <img src="./imgs/chave.png" width="32px"></h5>
+          <h5 class="modal-title" id="exampleModalLabel"><strong>Cadastrar</strong>
+            <img src="./imgs/chave.png" width="32px">          
+          </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
         </div>
         <div class="modal-body">
@@ -106,6 +109,10 @@
             <div class=" d-flex align-items-center justify-content-center">
               <input type="number" class="form-control inputsRegistrarSaida" id="inputQuantidadeCadastrar" placeholder="Quantidade">
             </div>
+            <div class="d-flex align-items-center justify-content-center">
+              <img src="./imgs/Loading.gif" width="32px" id="loading" style="display: none;">
+            </div>
+
           </form>
         </div>
         <div class="modal-footer d-flex align-items-center justify-content-center">

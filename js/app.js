@@ -6,6 +6,7 @@ const modeloCadastrar = document.querySelector('#inputModeloCadastrar');
 const codigoCadastrar = document.querySelector('#inputCodigoCadastrar');
 const quantidadeCadastrar = document.querySelector('#inputQuantidadeCadastrar');
 const btnCadastrar = document.querySelector('#btnCadastrar');
+const loading = document.querySelector('#loading');
 
 // Lista todas chaves cadastradas
 const buscaRegistros = async () => {
@@ -42,17 +43,20 @@ const buscaRegistros = async () => {
       `
       tabela.appendChild(tr); 
     });
-
+    loading.style.display = 'none';
   } catch (error) {
     return console.log(error);
+
   }
 }
 
 buscaRegistros();
 
 
+
 // Cadastra uma chave no Banco de dados
 btnCadastrar.addEventListener('click', async(event)=> {
+  loading.style.display = 'block';
   if(!modeloCadastrar.value || !codigoCadastrar.value || !quantidadeCadastrar.value) {
     Swal.fire({
       title: "Preencha todos os campos e tente novamente!",
@@ -88,6 +92,7 @@ btnCadastrar.addEventListener('click', async(event)=> {
         icon: "warning",
         confirmButtonColor: "#5bc0de",
       });
+     loading.style.display = 'none';
       return;
     }
 
@@ -97,6 +102,7 @@ btnCadastrar.addEventListener('click', async(event)=> {
         icon: "success",
         confirmButtonColor: "#5cb85c",
       });
+    loading.style.display = 'none';
     }
 
     setTimeout(()=> {
