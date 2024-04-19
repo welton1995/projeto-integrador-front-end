@@ -1,3 +1,4 @@
+
 a {
   margin: .25rem
 }
@@ -21,6 +22,12 @@ a {
 
 .logo {
   filter: drop-shadow(4px 4px 2px black);
+}
+
+body {
+  min-width: auto;
+  min-height: 100vh;
+  background-color: #e3e4e6;
 }
 
 main {
@@ -113,6 +120,35 @@ main {
 
 tr:hover td {
   background-color: #92ddf1;
+}
+
+/* Barra de navegação */
+/* Estilo para a barra de rolagem vertical */
+::-webkit-scrollbar {
+  width: 15px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00c6fb;
+   /* Cor do botão de rolagem */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Cor da área da barra de rolagem */
+}
+
+/* Estilo para a barra de rolagem horizontal */
+::-webkit-scrollbar-horizontal {
+  height: 15px; /* Altura da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: #00c6fb;
+ /* Cor do botão de rolagem horizontal */
+}
+
+::-webkit-scrollbar-track:horizontal {
+  background-color: #f1f1f1; /* Cor da área da barra de rolagem horizontal */
 }
 
 
