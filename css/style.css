@@ -2,6 +2,16 @@ a {
   margin: .25rem
 }
 
+.footer {
+  background: linear-gradient(#00c6fb 0%, #005bea 100%);
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  position: relative;
+  bottom: 1px;
+  margin-top: 60px;
+}
+
 .pagina {
   display: flex;
   justify-content: space-between;
@@ -11,6 +21,10 @@ a {
 
 .logo {
   filter: drop-shadow(4px 4px 2px black);
+}
+
+main {
+  min-height: 75vh;
 }
 
 .logo:hover {
