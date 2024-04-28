@@ -1,5 +1,3 @@
-const apiURL = 'https://projeto-integrador-back-end-5kn7.onrender.com';
-
 // inputs para pesquisar um código
 const buscaCodigo = document.querySelector('#buscaCodigo');
 const btnBuscaCodigo = document.querySelector('#btnBuscaCodigo');
