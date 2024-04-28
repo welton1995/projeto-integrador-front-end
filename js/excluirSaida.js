@@ -1,5 +1,5 @@
 // URL da API
-const apiURL = 'https://important-cyan-dress.cyclic.app';
+const apiURL = 'https://projeto-integrador-back-end-5kn7.onrender.com';
 
 // inputs formulario registrar saida
 const modelo = document.querySelector('#inputModeloSaida');
