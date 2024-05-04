@@ -117,9 +117,15 @@ main {
   margin-right: .5rem;
 }
 
+td {
+  transition: .3s;
+}
 
 tr:hover td {
   background-color: #92ddf1;
+  transform: translate(5px, -5px);
+  border-radius: 5px;
+
 }
 
 /* Barra de navegação */
