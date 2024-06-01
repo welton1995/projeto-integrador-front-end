@@ -1,6 +1,5 @@
 // URL da API
-const apiURL = 'https://projeto-integrador-back-end-5kn7.onrender.com';
-// const apiURL = 'https://carmine-piglet-shoe.cyclic.app/';
+const apiURL = 'https://projeto-integrador-back-end.vercel.app';
 
 // inputs formulario registrar saida
 const modelo = document.querySelector('#inputModeloSaida');
